@@ -110,7 +110,7 @@ body {
   font-weight: 700;
   font-size: 38px;
   line-height: 46px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .dotted {
@@ -217,14 +217,18 @@ body {
   align-items: center;
 }
 .header__langs-link {
+  display: block;
   color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
   border-radius: 8px;
-  display: block;
-  text-decoration: none;
   padding: 6.5px 7px;
+}
+.header__langs-link:hover {
+  color: #f0145a;
 }
 .header__langs-link--gray {
   color: #b3b3ba;
@@ -360,10 +364,26 @@ body {
   }
 }
 .header__list-link {
+  display: block;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
   color: #ffffff;
   text-decoration: none;
-  font-weight: 700;
+  transition: color 0.2s ease;
 }
 .header__list-link:hover {
+  color: #f0145a;
+}
+.header__list-link.active {
+  color: #f0145a;
+  border-bottom: 2px solid #f0145a;
+}
+.header__list-link--blue {
+  color: #006ccf;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.header__list-link--blue:hover {
   color: #f0145a;
 }/*# sourceMappingURL=style.css.map */

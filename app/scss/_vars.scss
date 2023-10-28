@@ -64,7 +64,7 @@ $breakpoint-xxl: 1920px;
   background-clip: text;
 }
 
-@mixin title($color: #fff) {
+@mixin title($color: $basic-white) {
   font-weight: 700;
   font-size: 38px;
   line-height: 46px;
@@ -89,14 +89,12 @@ $breakpoint-xxl: 1920px;
   align-items: center;
 }
 
-@mixin base-link($color: #fff) {
+@mixin base-link($color: $basic-white) {
   color: $color;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
 
   &:hover {
     color: $accent-color;
   }
 }
-
-
