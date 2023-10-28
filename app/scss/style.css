@@ -194,7 +194,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .header__inner::before {
-    background: transparent;
+    z-index: -1;
   }
 }
 @media screen and (min-width: 768px) {
@@ -213,7 +213,6 @@ body {
 }
 .header__langs {
   display: flex;
-  gap: 14px;
   justify-content: center;
   align-items: center;
 }
@@ -226,6 +225,9 @@ body {
   display: block;
   text-decoration: none;
   padding: 6.5px 7px;
+}
+.header__langs-link--gray {
+  color: #b3b3ba;
 }
 .header__langs-link.active {
   background-color: #f0145a;
@@ -361,4 +363,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
+}
+.header__list-link:hover {
+  color: #f0145a;
 }/*# sourceMappingURL=style.css.map */
