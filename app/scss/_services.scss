@@ -1,0 +1,105 @@
+.services {
+  // .services__conteiner
+
+  &__conteiner {
+  }
+
+  // .services__head
+
+  &__head {
+    margin-bottom: 30px;
+  }
+
+  // .services__title
+
+  &__title {
+    display: inline-block;
+    @include base-link($regular-color);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 7px;
+      height: 7px;
+      border-left: 2px solid $regular-color;
+      border-bottom: 2px solid $regular-color;
+      transform: rotate(-135deg);
+    }
+
+    &:hover {
+      color: $accent-color;
+      &::before {
+        border-left: 2px solid $accent-color;
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+  }
+
+  // .services__content
+
+  &__content {
+    @include main-gradient-text;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  // .services__cards
+
+  &__cards {
+  }
+}
+.container {
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__card {
+    // padding-top: 94px;
+  }
+
+  &__card-icon {
+    display: inline-block;
+    padding: 14px;
+    // background: $basic-white;
+    border-radius: $radius-lg;
+
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+
+  }
+  // .cards__card-title
+
+  &__card-title {
+    padding: 0 0 15px 0;
+  }
+
+  // .cards__card-link
+
+  &__card-link {
+    font-size: 22px;
+    font-weight: 700;
+    @include base-link($active-color);
+  }
+
+  // .cards__card-content
+
+  &__card-content {
+    color: $basic-white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+}

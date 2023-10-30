@@ -233,10 +233,12 @@
       right: 0;
       background: $basic-white;
     }
+    
     span {
       top: 49%;
       transform: translateY(-50%);
     }
+
     &::after {
       top: auto;
       bottom: 7px;
