@@ -124,7 +124,7 @@
     font-size: 12px;
     // line-height: 15px; // хардкод высоты строки -- плохо, увеличили падиногм
     border-radius: $radius-sm;
-    
+
     padding: 6.5px 7px;
 
     &--gray {
@@ -210,29 +210,42 @@
   // .header__box-burger
 
   &__box-burger {
-    width: 24px;
-    height: 19px;
+    width: 34px;
+    height: 34px;
     position: relative;
     cursor: pointer;
+    border-radius: $radius-sm;
+    padding: 5px;
+
+    &--light {
+      background: $separator-color;
+    }
 
     &::after,
     &::before,
     span {
       position: absolute;
       content: '';
-      height: 2px;
-      top: 0;
-      left: 0;
+      width: 23px;
+      height: 3px;
+      top: 6px;
+      left: 6px;
       right: 0;
       background: $basic-white;
     }
     span {
-      top: 50%;
+      top: 49%;
       transform: translateY(-50%);
     }
     &::after {
       top: auto;
-      bottom: 0;
+      bottom: 7px;
+    }
+
+    &--light::after,
+    &--light::before,
+    &--light span {
+      background: $main-color;
     }
 
     @include viewport-md {
@@ -241,39 +254,65 @@
   }
 
   &__nav {
-    display: none;
+    position: fixed;
+    z-index: 50;
+    padding: 12px 12px;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    background: $basic-white;
+    border-radius: $radius-md $radius-md 0 0;
+    transform: translateY(101%);
+    transition: transform 0.3s 0.2s linear;
+
+    &.opened {
+      transform: translateY(0);
+      transition: transform 0.2s linear;
+    }
 
     @include viewport-md {
-      display: block;
+      padding: 0;
+      position: static;
+      background: transparent;
+      border-radius: 0;
     }
   }
 
   // .header__nav-close
 
   &__nav-close {
+    position: relative;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-sm;
+    margin-left: auto;
+    margin-bottom: 20px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      top: 16px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $accent-color;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &.rotate::after,
+    &.rotate::before {
+      transform: rotate(0deg);
+      transition: transform 0.2s linear;
+    }
+
     @include viewport-md {
       display: none;
-      position: relative;
-      width: 32px;
-      height: 32px;
-      background: $separator-color;
-      border-radius: $radius-sm;
-
-      &::after,
-      &::before {
-        position: absolute;
-        content: '';
-        top: 16px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: $accent-color;
-        transform: rotate(-45deg);
-      }
-
-      &::after {
-        transform: rotate(45deg);
-      }
     }
   }
 
@@ -281,8 +320,11 @@
 
   &__list {
     display: flex;
+    flex-flow: column;
     gap: 15px;
-
+    @include viewport-md {
+      flex-flow: row;
+    }
     @include viewport-lg {
       // margin-bottom: 16px;
       justify-content: flex-end;
@@ -298,17 +340,38 @@
 
   &__list-link {
     display: block;
-    padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
+    text-align: center;
+    @include base-link($active-color);
     font-weight: 700;
-    @include base-link;
+    font-size: 24px;
+    padding: 7px 0px;
+    background: $bg-color;
+    border-radius: $radius-md;
+
+    &:hover {
+      background: $separator-color;
+    }
+
+    @include viewport-md {
+      padding: 0 0 3px 0;
+      @include base-link;
+      border-bottom: 2px solid transparent;
+      font-size: 16px;
+      border-radius: 0;
+      background: transparent;
+
+      &:hover {
+        background: transparent;
+      }
+
+      &--blue {
+        @include base-link($active-color);
+      }
+    }
 
     &.active {
       color: $accent-color;
       border-bottom: 2px solid $accent-color;
-    }
-    &--blue {
-      @include base-link($active-color);
     }
   }
 }

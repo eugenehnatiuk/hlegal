@@ -1,13 +1,16 @@
 .tabs {
   color: $basic-white;
   padding: 30px 0;
-  margin: 0 0 30px;
+  //   margin: 0 0 30px;
   overflow: hidden;
-  // .tabs_container
   @include viewport-md {
     padding: 60px 0;
   }
-  &_container {
+  &__container {
+    @include viewport-lg {
+      display: flex;
+      align-items: center;
+    }
   }
 
   // .tabs__links
@@ -17,13 +20,36 @@
     gap: 30px;
     white-space: nowrap;
     margin: 0 -30px 30px 0;
+    padding-right: 30px;
     overflow: auto;
+
     &::-webkit-scrollbar {
       display: none;
     }
     @include viewport-md {
       margin-bottom: 60px;
       margin-right: calc(-50vw + 324px);
+      padding-right: calc(50vw - 324px);
+    }
+
+    @include viewport-lg {
+      flex-direction: column;
+      margin: 0;
+      padding-right: 60px;
+      overflow: visible;
+      flex: 1 1 50%;
+      justify-content: center;
+      align-items: flex-end;
+      //   border-right: 4px solid $text-color;
+    }
+
+    @include viewport-xl {
+      flex: 1 1 40%;
+      border-right: 4px solid $text-color;
+    }
+
+    @include viewport-xll {
+      flex: 1 1 30%;
     }
   }
 
@@ -32,6 +58,10 @@
   &__links-items {
     cursor: pointer;
     @include subtitle($text-color);
+
+    &:hover {
+      @include main-gradient-text($accent-color);
+    }
 
     &.active {
       @include main-gradient-text($gradient-red-text-reversed);
@@ -44,9 +74,27 @@
     padding-top: 30px;
     border-top: 4px solid $text-color;
     font-size: 19px;
+    line-height: 1.58;
 
-     @include viewport-md {
+    @include viewport-md {
       padding-top: 60px;
+    }
+
+    @include viewport-lg {
+      padding-top: 0;
+      padding-left: 60px;
+      flex: 1 1 50%;
+      border-top: 0;
+      border-left: 4px solid $text-color;
+    }
+
+    @include viewport-xl {
+      flex: 1 1 50%;
+      border-left: none;
+    }
+
+    @include viewport-xll {
+      flex: 1 1 50%;
     }
   }
 
@@ -54,7 +102,8 @@
 
   &__contents-item {
     display: none;
-    &.active {
+
+    &.visible {
       display: block;
     }
   }
@@ -65,12 +114,14 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 30px;
+
+    @include viewport-md {
+      font-size: 30px;
+    }
   }
 
   // .tabs__contents-text
 
   &__contents-text {
-    font-size: 19px;
-    line-height: 1.58;
   }
 }
