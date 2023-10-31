@@ -5,10 +5,32 @@ body {
 
 .wrapper {
   background: $gradient-supersoft;
+  border-radius: $radius-md;
+  padding-bottom: 60px;
+  position: relative;
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    background: #cacadb;
+    border-radius: 0 0 12px 12px;
+  }
+  &::after {
+    bottom: -20px;
+    left: 40px;
+    right: 40px;
+    background: #E7E7F2;;
+  }
 }
 
 .hidden {
-  display: none;
+  // display: none;
+  width: 0;
+  height: 0;
 }
 
 .container {

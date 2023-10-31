@@ -33,6 +33,7 @@
       border-left: 2px solid $regular-color;
       border-bottom: 2px solid $regular-color;
       transform: rotate(-135deg);
+      transition: all 0.2s ease;
     }
 
     &:hover {
@@ -64,21 +65,31 @@
   flex-direction: column;
   gap: 30px;
 
+  @include viewport-md{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   &__card {
-    // padding-top: 94px;
+     @include viewport-md{
+    flex: 1 1 40%;
+  }
+      @include viewport-lg{
+    flex: 1 1 30%;
+  }
   }
 
   &__card-icon {
     display: inline-block;
     padding: 14px;
-    // background: $basic-white;
+    line-height: 10px;
+    background: $basic-white;
     border-radius: $radius-lg;
-
+    margin-bottom: 30px;
     svg {
       width: 64px;
       height: 64px;
     }
-
   }
   // .cards__card-title
 
