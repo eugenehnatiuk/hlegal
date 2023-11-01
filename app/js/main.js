@@ -34,7 +34,6 @@
   });
 })();
 
-
 // SWIPER FOR TEAM'S SECTION
 
 const teamSwiper = new Swiper('.team__swiper', {
@@ -43,11 +42,18 @@ const teamSwiper = new Swiper('.team__swiper', {
   loop: true,
   grabCursor: 'true',
   spaceBetween: 30,
+  speed: 800,
+  // autoplay: {
+  //   delay: 3000,
+  // },
+
   // effect: 'flip',
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
-    clickable: 'true'
+    clickable: 'true',
+    dynamicBullets: 'true',
+    dynamicMainBullets: 1,
   },
 
   // Navigation arrows
