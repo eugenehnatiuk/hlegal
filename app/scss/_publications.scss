@@ -1,0 +1,135 @@
+.publications {
+  background: $bg-color;
+  padding: 30px 0;
+
+  // .publications__container
+
+  &__container {
+  }
+
+  // .publications__link
+
+  &__link {
+    display: inline-block;
+    @include base-link($regular-color);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    position: relative;
+    padding-right: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 7px;
+      height: 7px;
+      border-left: 2px solid $regular-color;
+      border-bottom: 2px solid $regular-color;
+      transform: rotate(-135deg);
+      transition: all 0.2s ease;
+    }
+
+    &:hover {
+      color: $accent-color;
+      &::before {
+        border-left: 2px solid $accent-color;
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+  }
+
+  // .publications__title
+
+  &__title {
+    @include subtitle;
+    @include main-gradient-text;
+    padding-bottom: 30px;
+  }
+
+  // .publications__box
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  // .publications__box-item
+
+  &__box-item {
+    overflow: hidden;
+    border-radius: $radius-sm;
+
+    @include viewport-md {
+      flex: 1 1 40%;
+    }
+    @include viewport-lg {
+      flex: 1 1 30%;
+    }
+    @include viewport-xl {
+      flex: 1 1 30%;
+      flex-wrap: nowrap;
+    }
+  }
+
+  // .publications__box-image
+
+  &__box-image {
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .publications__box-content
+
+  &__box-content {
+    padding: 30px;
+    background: $basic-white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include viewport-md {
+      height: 100%;
+    }
+  }
+
+  // .publications__box-link
+
+  &__box-link {
+    @include base-link($regular-color);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  // .publications__box-date
+
+  &__box-date {
+    text-transform: uppercase;
+    color: $text-color;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  // .publications__box-text
+
+  &__box-text {
+    color: $basic-black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+.separator {
+  @include separator
+}

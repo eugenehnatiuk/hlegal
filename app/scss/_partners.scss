@@ -1,7 +1,12 @@
 .partners {
   // .partners__container
 
+
   &__container {
+    @include viewport-xll {
+      margin: 0 auto;
+      max-width: 1760px;
+    }
   }
 
   // .partners__title
@@ -19,6 +24,10 @@
   // .partners__box
 
   &__box {
+    @include viewport-xll {
+      border-radius: $radius-md;
+      overflow: hidden;
+    }
   }
 
   // .partners__list
@@ -31,9 +40,8 @@
       height: auto;
       display: flex;
       flex-wrap: wrap;
-       overflow: visible;
+      overflow: visible;
     }
-      
   }
 
   // .partners__list-item
@@ -46,40 +54,87 @@
 
     &:first-child {
       background: #1c4280;
+      img {
+        width: 217px;
+        height: 48px;
+      }
     }
     &:nth-child(2) {
       background: #143646;
+      img {
+        width: 199px;
+        height: 32px;
+      }
     }
     &:nth-child(3) {
       background: #f48b30;
+      img {
+        width: 179px;
+        height: 44px;
+      }
     }
     &:nth-child(4) {
       background: #9e4dc3;
+      img {
+        width: 180px;
+        height: 42px;
+      }
     }
     &:nth-child(5) {
       background: #fd9339;
+      img {
+        width: 174px;
+        height: 44px;
+      }
     }
     &:nth-child(6) {
       background: #e2e2e4;
+      img {
+        width: 187px;
+        height: 48px;
+      }
     }
     &:nth-child(7) {
       background: #c71c36;
+      img {
+        width: 138px;
+        height: 61px;
+      }
     }
     &:nth-child(8) {
       background: #dcf3f9;
-      padding: 22px 0;
+      img {
+        width: 146px;
+        height: 76px;
+      }
     }
     &:nth-child(9) {
       background: #eaeaea;
+      img {
+        width: 181px;
+        height: 38px;
+      }
     }
     &:nth-child(10) {
       background: #282240;
+      img {
+        width: 182px;
+        height: 60px;
+      }
     }
     &:nth-child(11) {
       background: #1d4568;
+      img {
+        width: 189px;
+        height: 46px;
+      }
     }
     &:nth-child(12) {
       background: #000;
+      img {
+        width: 152px;
+        height: 95px;
+      }
     }
 
     @include viewport-md {
@@ -96,8 +151,4 @@
   &__list-link {
     display: inline-block;
   }
-
-  //   img:nth-child(6) {
-  //     vertical-align: middle;
-  //   }
 }
