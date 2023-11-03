@@ -34,6 +34,19 @@
   });
 })();
 
+// Navigation Menu's links
+(function () {
+  const headerListLink = document.querySelectorAll('.header__list-link');
+  headerListLink.forEach((link) =>
+    link.addEventListener('click', (event) => {
+      headerListLink.forEach((otherLinks) => {
+        otherLinks.classList.remove('active');
+      });
+      link.classList.add('active');
+    })
+  );
+})();
+
 // SWIPER FOR TEAM'S SECTION
 
 const teamSwiper = new Swiper('.team__swiper', {

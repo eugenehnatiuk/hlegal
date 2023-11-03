@@ -6,6 +6,7 @@
   @include viewport-md {
     padding: 60px 0;
   }
+
   &__container {
     @include viewport-lg {
       display: flex;
@@ -26,6 +27,7 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
     @include viewport-md {
       margin-bottom: 60px;
       margin-right: calc(-50vw + 324px);
@@ -120,8 +122,5 @@
     }
   }
 
-  // .tabs__contents-text
-
-  &__contents-text {
-  }
+ 
 }

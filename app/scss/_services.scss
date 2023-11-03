@@ -1,8 +1,4 @@
 .services {
-  
-  &__conteiner {
-  }
-
   // .services__head
 
   &__head {
@@ -50,15 +46,17 @@
     @include main-gradient-text;
     font-size: 30px;
     font-weight: 700;
+
+    @include viewport-md{
+      font-size: 38px;
+    }
   }
 
   // .services__cards
 
-  &__cards {
-  }
+  
 }
-.container {
-}
+
 .cards {
   display: flex;
   flex-direction: column;

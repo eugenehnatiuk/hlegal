@@ -1,13 +1,15 @@
 .footer {
-  background: $bg-color;
   text-align: center;
+  
+  background: $bg-color;
   //   text-align: center;
 
-  // .footer__container
-
-  &__container {
-    // padding: 30px 30px;
-    // border: 2px solid black
+  &__inner {
+    padding-top: 30px;
+    @include viewport-md {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   // .footer__location
@@ -17,6 +19,14 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+
+    @include viewport-md {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex: 1 1 40%;
+      order: 1;
+    }
   }
 
   // .footer__location-adres
@@ -44,6 +54,15 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 30px;
+
+    @include viewport-md {
+      display: flex;
+      flex-direction: row;
+      flex: 1 1 40%;
+      order: 3;
+      justify-content: flex-start;
+      margin: 0;
+    }
   }
 
   // .footer__contacts-social
@@ -60,6 +79,7 @@
   // .footer__contacts-phone
 
   &__contacts-phone {
+    color: $alt-color;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
@@ -80,6 +100,12 @@
     color: $text-color;
     font-size: 16px;
     font-weight: 400;
+
+    @include viewport-md {
+      flex: 1 1 40%;
+      order: 2;
+      text-align: right;
+    }
   }
 
   .separator {

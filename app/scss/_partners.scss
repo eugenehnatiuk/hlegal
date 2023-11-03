@@ -1,6 +1,12 @@
 .partners {
-  // .partners__container
+  background: $bg-color;;
+  padding-bottom: 30px;
 
+  &--page{
+    background: $basic-white;
+    padding-bottom: 0;
+  }
+  // .partners__container
 
   &__container {
     @include viewport-xll {

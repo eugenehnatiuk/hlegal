@@ -15,9 +15,6 @@
   //     background: url('../images/h_logo.png') no-repeat center / auto 100%;
   //   }
 
-  &__header {
-  }
-
   // .head__title
 
   &__title {
@@ -52,6 +49,16 @@
     &:hover::before {
       border-bottom: 2px solid $accent-color;
       border-left: 2px solid $accent-color;
+    }
+  }
+
+  &--page {
+    background: none;
+    min-height: auto;
+    margin-bottom: 30px;
+
+    @include viewport-md {
+      margin-bottom: 60px;
     }
   }
 }
@@ -112,9 +119,6 @@
   }
 
   // .header__langs-item
-
-  &__langs-item {
-  }
 
   &__langs-link {
     display: block;
@@ -196,6 +200,7 @@
   // .header__box-log
 
   &__box-log {
+    position: relative;
     img {
       width: 70px;
       height: 32px;
@@ -204,6 +209,40 @@
         width: 130px;
         height: 60px;
       }
+    }
+  }
+  &__box-brcrumbs {
+    position: relative;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__box-separator {
+    align-self: baseline;
+    width: 12px;
+    height: 26px;
+    @include viewport-md {
+      width: 21px;
+      height: 47px;
+    }
+  }
+
+  &__box-section {
+    position: absolute;
+    content: '';
+    top: 3px;
+    right: -103px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    color: $basic-white;
+
+    @include viewport-md {
+      font-size: 36px;
+      top: 5px;
+      right: -181px;
     }
   }
 
@@ -233,7 +272,7 @@
       right: 0;
       background: $basic-white;
     }
-    
+
     span {
       top: 49%;
       transform: translateY(-50%);
@@ -324,6 +363,7 @@
     display: flex;
     flex-flow: column;
     gap: 15px;
+
     @include viewport-md {
       flex-flow: row;
     }
@@ -331,11 +371,6 @@
       // margin-bottom: 16px;
       justify-content: flex-end;
     }
-  }
-
-  // .header__list-item
-
-  &__list-item {
   }
 
   // .header__list-link
@@ -369,17 +404,11 @@
       &--blue {
         @include base-link($active-color);
       }
-    }
 
-    &.active {
-      color: $accent-color;
-      border-bottom: 2px solid $accent-color;
+      &.active {
+        color: $accent-color;
+        border-bottom: 2px solid $accent-color;
+      }
     }
   }
-}
-.container {
-}
-.dotted {
-}
-.main-title {
 }
