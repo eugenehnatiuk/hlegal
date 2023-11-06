@@ -127,6 +127,12 @@
     font-weight: 400;
     line-height: 22px;
   }
+
+
+  &--rounded{
+    border-radius: $radius-md $radius-md 0 0;
+    padding-top: 30px;
+}
 }
 
 .separator {

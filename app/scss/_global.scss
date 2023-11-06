@@ -1,7 +1,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
- }
+}
 
 .wrapper {
   background: $gradient-supersoft;
@@ -18,17 +18,17 @@ body {
     height: 10px;
     background: #cacadb;
     border-radius: 0 0 12px 12px;
-    z-index: 1
-    }
+    z-index: 1;
+  }
   &::after {
     bottom: -20px;
     left: 40px;
     right: 40px;
-    background: #E7E7F2;;
+    background: #e7e7f2;
   }
 
-  &--page{
-    margin-bottom: 80px;
+  &--page {
+    margin-bottom: 60px;
   }
 }
 
@@ -87,4 +87,13 @@ body {
       background: $text-color;
     }
   }
+}
+
+.btn {
+  display: inline-block;
+  padding: 18px 30px;
+  border-radius: $radius-md;
+  background: $regular-color;
+  box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.5);
+  cursor: pointer;
 }
