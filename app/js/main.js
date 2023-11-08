@@ -50,20 +50,46 @@
 // POP-UP MENU
 (function () {
   const popUpMenu = document.querySelector('.pop-up');
-  const popUpClose = document.querySelector('.pop-up__form-close');
-  const popUpOpen = document.querySelector('.e-commerce__button');
+  const popUpMenuClose = document.querySelector('.pop-up__form-close');
+  const consultationButton = document.querySelector('.e-commerce__button');
   const popUpContainer = document.querySelector('.pop-up__container');
 
-  popUpOpen.addEventListener('click', () => {
+  function openPopUp() {
     popUpMenu.classList.remove('hiden');
-    popUpClose.classList.remove('rotate');
-  });
+    popUpMenuClose.classList.remove('rotate');
+    document.addEventListener('click', closePopUpOutside);
+  }
 
-  popUpClose.addEventListener('click', () => {
-    const hide = () => popUpMenu.classList.add('hiden');
-    popUpClose.classList.add('rotate');
+  function closePopUp() {
+    const hide = () => {
+      popUpMenu.classList.add('hiden');
+      document.removeEventListener('click', closePopUpOutside);
+    };
+    popUpMenuClose.classList.add('rotate');
     setTimeout(() => hide(), 250);
-  });
+  }
+
+  function closePopUpOutside(event) {
+    if (
+      event.target !== popUpContainer &&
+      event.target !== consultationButton &&
+      !popUpContainer.contains(event.target)
+    ) {
+      closePopUp();
+    }
+  }
+
+  if (consultationButton) {
+    consultationButton.addEventListener('click', () => {
+      openPopUp();
+    });
+  }
+
+  if (popUpMenuClose) {
+    popUpMenuClose.addEventListener('click', () => {
+      closePopUp();
+    });
+  }
 })();
 
 // SWIPER FOR TEAM'S SECTION
