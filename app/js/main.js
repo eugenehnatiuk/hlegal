@@ -38,7 +38,7 @@
 (function () {
   const headerListLink = document.querySelectorAll('.header__list-link');
   headerListLink.forEach((link) =>
-    link.addEventListener('click', (event) => {
+    link.addEventListener('click', () => {
       headerListLink.forEach((otherLinks) => {
         otherLinks.classList.remove('active');
       });
@@ -47,20 +47,36 @@
   );
 })();
 
-// SWIPER FOR TEAM'S SECTION
+// POP-UP MENU
+(function () {
+  const popUpMenu = document.querySelector('.pop-up');
+  const popUpClose = document.querySelector('.pop-up__form-close');
+  const popUpOpen = document.querySelector('.e-commerce__button');
+  const popUpContainer = document.querySelector('.pop-up__container');
 
+  popUpOpen.addEventListener('click', () => {
+    popUpMenu.classList.remove('hiden');
+    popUpClose.classList.remove('rotate');
+  });
+
+  popUpClose.addEventListener('click', () => {
+    const hide = () => popUpMenu.classList.add('hiden');
+    popUpClose.classList.add('rotate');
+    setTimeout(() => hide(), 250);
+  });
+})();
+
+// SWIPER FOR TEAM'S SECTION
 const teamSwiper = new Swiper('.team__swiper', {
-  // Optional parameters
   direction: 'horizontal',
   loop: true,
   grabCursor: 'true',
   spaceBetween: 30,
   speed: 800,
-  // autoplay: {
-  //   delay: 3000,
-  // },
+  autoplay: {
+    delay: 3000,
+  },
 
-  // effect: 'flip',
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
@@ -68,15 +84,4 @@ const teamSwiper = new Swiper('.team__swiper', {
     dynamicBullets: 'true',
     dynamicMainBullets: 1,
   },
-
-  // Navigation arrows
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
 });

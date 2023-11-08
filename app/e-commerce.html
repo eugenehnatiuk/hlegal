@@ -41,7 +41,7 @@
                                 <img src="images/hlegal_logo.svg" alt="hlegal law company" width="70" height="32">
                             </a>
                             <svg class="header__box-separator">
-                                <use href="#box-separator"></use>
+                                <use href="#logo-separator"></use>
                             </svg>
                             <span class="header__box-section">services</span>
                         </div>
@@ -116,6 +116,25 @@
                         </ul>
                     </div>
                 </div>
+                <div class="pop-up hiden">
+                    <div class="pop-up__container">
+                        <form class="pop-up__form" action="#">
+                            <div class="pop-up__form-top">
+                                <h3 class="pop-up__form-title">We would like to help you</h3>
+                                <div class="pop-up__form-close"></div>
+                            </div>
+                            <input class="pop-up__form-text" type="text" placeholder="Name" required>
+                            <textarea class="pop-up__form-message" name="message" id="message" cols="20" rows="10"
+                                placeholder="Message"></textarea>
+                            <p class="pop-up__form-subtitle">How to answer you?</p>
+                            <input type="tel" placeholder="Phone number" required>
+                            <input type="email" placeholder="Email" required>
+                            <input class="btn" type="submit" value="Send message" id="submit">
+
+                        </form>
+                    </div>
+
+                </div>
             </section>
 
         </main>
@@ -180,6 +199,7 @@
 
     <footer class="footer">
         <div class="footer__container container">
+            <span class="separator"></span>
             <div class="footer__inner">
                 <div class="footer__location">
                     <p class="footer__location-adres">Kyiv, Mechnikova str., 14/1</p>
@@ -211,7 +231,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
 
         <!-- Separator / -->
-        <symbol id="box-separator" viewBox="0 0 12 26" fill="none">
+        <symbol id="logo-separator" viewBox="0 0 12 26" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.72827 0H11.9505L3.55574 26H0.333496L8.72827 0Z"
                 fill="#F0145A" />
         </symbol>
