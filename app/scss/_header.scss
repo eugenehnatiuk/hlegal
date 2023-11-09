@@ -219,6 +219,13 @@
         margin: 0 0 30px;
         padding: 0;
       }
+      @include viewport-lg {
+        margin: 0;
+        position: absolute;
+        content: '';
+        top: 25%;
+        left: 30px;
+      }
     }
   }
 
@@ -335,6 +342,8 @@
     }
 
     @include viewport-md {
+      transform: translateY(0);
+      transition: none;
       padding: 0;
       position: static;
       background: transparent;
