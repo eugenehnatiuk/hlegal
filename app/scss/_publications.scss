@@ -157,9 +157,11 @@
     }
     span + span {
       margin-right: 0px;
+      position: relative;
     }
 
-    &::before {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       top: 2px;
@@ -171,13 +173,25 @@
       z-index: 1;
       transition: transform 0.2s linear;
     }
+    &::after {
+      display: none;
+    }
+    &:hover::after {
+      display: block;
+      left: auto;
+      right: 3px;
+      background: $bg-color;
+    }
 
     &--active {
       &::before {
-        // left: auto;
-        // right: 3px;
         transform: translateX(107%);
         transition: transform 0.2s linear;
+      }
+      &:hover::after {
+        display: block;
+        left: 3px;
+        background: $bg-color;
       }
     }
   }
