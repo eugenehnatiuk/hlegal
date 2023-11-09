@@ -1,3 +1,4 @@
+// TABS
 (function () {
   const tabsItems = document.querySelectorAll('.tabs__links-items');
   const tabsContents = document.querySelectorAll('.tabs__contents-item');
@@ -18,6 +19,7 @@
   });
 })();
 
+// NAVIGATION
 (function () {
   const navOpen = document.querySelector('.header__box-burger');
   const navClose = document.querySelector('.header__nav-close');
@@ -88,6 +90,16 @@
   if (popUpMenuClose) {
     popUpMenuClose.addEventListener('click', () => {
       closePopUp();
+    });
+  }
+})();
+
+// SWITCHER
+(function () {
+  const switcherBtn = document.querySelector('.publications__button-switcher');
+  if (switcherBtn) {
+    switcherBtn.addEventListener('click', () => {
+      switcherBtn.classList.toggle('publications__button-switcher--active');
     });
   }
 })();
