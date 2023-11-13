@@ -105,21 +105,25 @@
 })();
 
 // SWIPER FOR TEAM'S SECTION
-const teamSwiper = new Swiper('.team__swiper', {
-  direction: 'horizontal',
-  loop: true,
-  grabCursor: 'true',
-  spaceBetween: 30,
-  speed: 800,
-  autoplay: {
-    delay: 3000,
-  },
+const teamSwiper = document.querySelector('.team__swiper');
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: 'true',
-    dynamicBullets: 'true',
-    dynamicMainBullets: 1,
-  },
-});
+if (teamSwiper) {
+  const teamSwiper = new Swiper('.team__swiper', {
+    direction: 'horizontal',
+    loop: true,
+    grabCursor: 'true',
+    spaceBetween: 30,
+    speed: 800,
+    autoplay: {
+      delay: 3000,
+    },
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: 'true',
+      dynamicBullets: 'true',
+      dynamicMainBullets: 1,
+    },
+  });
+}

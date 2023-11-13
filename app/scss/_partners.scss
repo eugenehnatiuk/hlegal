@@ -1,6 +1,6 @@
 .partners {
   // background: $bg-color;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 
   &--page{
     background: $basic-white;
@@ -54,9 +54,8 @@
 
   &__list-item {
     height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    
 
     &:first-child {
       background: #1c4280;
@@ -155,6 +154,9 @@
   // .partners__list-link
 
   &__list-link {
-    display: inline-block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
