@@ -41,6 +41,14 @@ body {
       display: none;
     }
   }
+
+  &--white{
+    background: $basic-white;
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .hidden {

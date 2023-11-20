@@ -109,6 +109,14 @@
       margin-bottom: 16px;
       justify-content: flex-end;
     }
+
+    &--light{
+      background-color: $bg-color;
+
+      @include viewport-md {
+        background: transparent;
+      }
+    }
   }
 
   // .header__langs

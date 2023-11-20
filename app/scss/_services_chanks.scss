@@ -7,6 +7,13 @@
     & .separator {
       margin-bottom: 30px;
     }
+
+    @include viewport-xl {
+      padding: 0 150px;
+    }
+    @include viewport-xll {
+      padding: 0 200px;
+    }
   }
 
   // .e-commerce__title
@@ -39,7 +46,7 @@
   // .e-commerce__button
 
   &__button {
-     margin-bottom: 30px;
+    margin-bottom: 30px;
   }
 
   // .e-commerce__services
