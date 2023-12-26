@@ -165,13 +165,7 @@
 
   // .publication__socials
 
-  &__socials {
-  }
-
   // .publication__socials-item
-
-  &__socials-item {
-  }
 }
 
 .socials {
@@ -183,9 +177,14 @@
     background: $bg-color;
     border-radius: $radius-md;
     margin: 0 10px 0 0;
+
+    &:hover {
+      background: $bg-alt-color;
+    }
   }
 
-  &__link {
+  a {
+    display: inline-block;
   }
 
   svg {
